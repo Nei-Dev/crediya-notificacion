@@ -1,0 +1,1 @@
+Lambda para notificar a través de SNS el resultado de aprobación o rechazo de un crédito, usando plantillas Handlebars.
