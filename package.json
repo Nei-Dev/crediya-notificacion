@@ -2,14 +2,14 @@
   "name": "crediya-notificacion",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "dependencies": {
     "@aws-sdk/client-sns": "^3.883.0",
     "handlebars": "^4.7.8"
