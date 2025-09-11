@@ -7,7 +7,7 @@ import Handlebars from 'handlebars';
 const filename = fileURLToPath(import.meta.url);
 const dirname = path.dirname(filename);
 
-const sns = new SESClient({ region: process.env.AWS_REGION });
+const ses = new SESClient({ region: process.env.AWS_REGION });
 
 // Pre-load and compile the Handlebars template
 const templatePath = path.join(dirname, 'template', 'credit.hbs');
