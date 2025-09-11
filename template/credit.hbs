@@ -82,15 +82,19 @@
             <table>
                 <thead>
                     <tr>
-                        <th>Mes</th>
-                        <th>Monto Mensual</th>
+                        <th>Número de cuota</th>
+						<th>Pago a capital</th>
+						<th>Interés</th>
+                        <th>Pago total</th>
                     </tr>
                 </thead>
                 <tbody>
                     {{#each paymentPlan}}
                     <tr>
-                        <td>{{month}}</td>
-                        <td>${{amount}}</td>
+                        <td>{{number}}</td>
+                        <td>${{principalPayment}}</td>
+                        <td>${{interestPayment}}</td>
+                        <td>${{totalPayment}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
