@@ -1,10 +1,109 @@
-Hola {{name}},
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #007bff;
+        }
+        .header h1 {
+            color: #007bff;
+        }
+        .content {
+            padding: 20px 0;
+        }
+        .info-box {
+            background-color: #e9f5ff;
+            border-left: 5px solid #007bff;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #007bff;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        .footer {
+            text-align: center;
+            padding-top: 20px;
+            color: #888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>{{subject}}</h1>
+        </div>
+        <div class="content">
+            <p>Hola <strong>{{name}}</strong>,</p>
 
-{{#if isApproved}}
-¡Tu crédito ha sido APROBADO!
-Monto aprobado: {{amount}}
-{{else}}
-Tu crédito ha sido RECHAZADO.
-{{/if}}
+			{{#if isApproved}}
+            <p>¡Nos complace informarte que tu solicitud de crédito ha sido aprobada!</p>
 
-Gracias por confiar en nosotros.
+            <div class="info-box">
+                Valor del Crédito: <strong>${{amount}}</strong>
+            </div>
+
+            <p>Aquí tienes el detalle de tu plan de pagos:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Monto Mensual</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each paymentPlan}}
+                    <tr>
+                        <td>{{month}}</td>
+                        <td>${{amount}}</td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+
+			{{else}}
+			<p>Lamentablemente, tu solicitud de crédito ha sido rechazada.</p>
+			{{/if}}
+        </div>
+        <div class="footer">
+            <p>Si tienes alguna pregunta, no dudes en contactarnos.</p>
+            <p>¡Gracias por tu confianza!</p>
+        </div>
+    </div>
+</body>
+</html>
